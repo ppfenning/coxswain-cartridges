@@ -611,7 +611,7 @@ def _validate(merged: Mapping[str, Any], skill_index: Mapping[str, Sequence[Any]
             found = ", ".join(str(b) for b in bodies)
             problems.append(f"role '{role}' binds skill '{name}', which resolves to {len(bodies)} bodies: {found}")
 
-    # Seats bind Claude Code plugin skills (superpowers:*, pat-skills:*, ...)
+    # Seats bind Claude Code plugin skills (superpowers:*, example-skills:*, ...)
     # that live in the provider's plugin cache, not in the harness skill index;
     # they are not validated here. Only role bindings under `skills` are.
     for entry in merged.get("context", []):

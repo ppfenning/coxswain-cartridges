@@ -62,7 +62,7 @@ You are a dispatcher for that one case, not a second doer.
   runs usage`, and the branch to open a pull request from. Merging that
   branch to the default branch is never this skill's job.
 - **Keep your own context clear by backgrounding most in-session work.**
-  Pat's intent, 2026-10-11: the chair should background most tasks so its
+  The operator's intent: the chair should background most tasks so its
   context window stays clear, by whatever means fits, named or sub agents
   within the session if not passing to a coxswain. The exit watcher above
   is one case of this rule. This rule covers what you do in-session
@@ -73,7 +73,7 @@ You are a dispatcher for that one case, not a second doer.
     anything that reads more than a few files. Use a background subagent
     or a background shell job: a named agent, a fork, or
     `run_in_background`. Keep only the conclusion in your context. Relay
-    it to Pat in a few lines, not the agent's full report.
+    it to the operator in a few lines, not the agent's full report.
   - **Examples to background.** A CI failure dig. A land plus its wait. A
     sweep across run logs. Filing an intake that needs file reading.
   - **Do it yourself** when it is a short single lookup or decision: one

@@ -380,21 +380,21 @@ def test_the_base_cartridge_still_loads_with_pacing_unmeasured() -> None:
 
 
 def test_tracker_defaults_to_github_projects_on_a_github_remote() -> None:
-    assert tracker_for({}, "git@github.com:pat/agent-cartridges.git") == "github-projects"
+    assert tracker_for({}, "git@github.com:example-team/agent-cartridges.git") == "github-projects"
 
 
 def test_tracker_defaults_to_none_on_a_non_github_remote() -> None:
-    assert tracker_for({}, "https://gitlab.example.com/pat/agent-cartridges.git") == "none"
+    assert tracker_for({}, "https://gitlab.example.com/example-team/agent-cartridges.git") == "none"
 
 
 def test_an_explicit_none_wins_over_a_github_remote() -> None:
     cartridge = {"policy": {"tracker": "none"}}
-    assert tracker_for(cartridge, "git@github.com:pat/agent-cartridges.git") == "none"
+    assert tracker_for(cartridge, "git@github.com:example-team/agent-cartridges.git") == "none"
 
 
 def test_an_explicit_bound_tracker_is_returned_verbatim() -> None:
-    cartridge = {"policy": {"tracker": "jira"}}
-    assert tracker_for(cartridge, "git@github.com:pat/agent-cartridges.git") == "jira"
+    cartridge = {"policy": {"tracker": "example-tracker"}}
+    assert tracker_for(cartridge, "git@github.com:example-team/agent-cartridges.git") == "example-tracker"
 
 
 def test_the_base_cartridge_still_loads_with_no_tracker_set() -> None:
